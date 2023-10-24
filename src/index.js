@@ -11,8 +11,6 @@ const breedSelect = document.querySelector("#breed-select");
 const loaderText = document.querySelector(".loader");
 const info = document.querySelector(".cat-info");
 
-loaderText.style.display = "block";
-
 fetchBreeds()
     .then(function (response) {
         loaderText.style.display = "none";
@@ -34,6 +32,7 @@ fetchBreeds()
         }
     })
     .catch(function () { 
+        console.log(loaderText);
         Notify.failure("Oops! Something went wrong! Try reloading the page!");
         loaderText.style.display = "none";
     });
